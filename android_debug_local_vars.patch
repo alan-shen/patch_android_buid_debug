@@ -1,0 +1,36 @@
+diff --git a/core/config.mk b/core/config.mk
+index f7f7f08..65bbb6e 100644
+--- a/core/config.mk
++++ b/core/config.mk
+@@ -79,6 +79,7 @@ BUILD_DROIDDOC:= $(BUILD_SYSTEM)/droiddoc.mk
+ BUILD_COPY_HEADERS := $(BUILD_SYSTEM)/copy_headers.mk
+ BUILD_NATIVE_TEST := $(BUILD_SYSTEM)/native_test.mk
+ BUILD_HOST_NATIVE_TEST := $(BUILD_SYSTEM)/host_native_test.mk
++DUMP_LOCAL := $(BUILD_SYSTEM)/dumplocal.mk
+ 
+ -include cts/build/config.mk
+ 
+diff --git a/core/dumplocal.mk b/core/dumplocal.mk
+new file mode 100644
+index 0000000..ed41e3b
+--- /dev/null
++++ b/core/dumplocal.mk
+@@ -0,0 +1,18 @@
++$(info )
++$(info ============= $(LOCAL_MODULE) ================)
++$(info ...........LOCAL_PATH..........)
++$(info $(LOCAL_PATH)) $(info  )
++$(info .....LOCAL_MODULE_TAGS.........)
++$(info $(LOCAL_MODULE_TAGS)) $(info  )
++$(info .........LOCAL_CFLAGS..........)
++$(info $(LOCAL_CFLAGS)) $(info  )
++$(info .....LOCAL_C_INCLUDES..........)
++$(info $(LOCAL_C_INCLUDES)) $(info  )
++$(info ......LOCAL_SRC_FILES..........)
++$(info $(LOCAL_SRC_FILES)) $(info  )
++$(info LOCAL_STATIC_LIBARIES..........)
++$(info $(LOCAL_STATIC_LIBRARIES)) $(info  )
++$(info LOCAL_SHARED_LIBRAIES..........)
++$(info $(LOCAL_SHARED_LIBRARIES)) $(info  )
++$(info ============= $(LOCAL_MODULE) ================)
++$(info )
